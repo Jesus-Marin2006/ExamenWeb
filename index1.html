@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios de Arreglos y Condicionales</title>
+    <script>
+        // Ejercicio 3
+        function ejercicio3() {
+            let numeros = [10, 20, 30, 40, 50];
+            numeros.shift(); // Elimina el primer elemento
+            console.log("Ejercicio 3 - Arreglo después de eliminar el primer elemento:", numeros);
+        }
+
+        // Ejercicio 4
+        function ejercicio4() {
+            let nombres = ["Carlos", "Ana", "Luis", "Pedro", "Sofía"]; // Reemplaza uno con tu nombre
+            let miNombre = "Carlos"; // Cambia aquí por tu nombre
+            let posicion = nombres.indexOf(miNombre);
+            console.log(`Ejercicio 4 - Tu nombre está en la posición: ${posicion}`);
+        }
+
+        // Ejercicio 5
+        function ejercicio5() {
+            let edades = [56, 19, 24, 36, 23];
+            let hayMayorDeEdad = edades.some(edad => edad >= 18);
+            console.log("Ejercicio 5 - ¿Hay alguien mayor de edad?:", hayMayorDeEdad);
+        }
+
+        // Ejercicio 6
+        function ejercicio6() {
+            let abecedario = ['r', 'z', 'g', 'a', 't', 'm', 'b', 'y', 'c'];
+            abecedario.sort();
+            console.log("Ejercicio 6 - Abecedario ordenado:", abecedario);
+        }
+
+        // Ejercicio 7 - Mostrar estación
+        function mostrarEstacion() {
+            const mes = document.getElementById("mes").value;
+            let estacion = "";
+
+            switch (mes) {
+                case "diciembre":
+                case "enero":
+                case "febrero":
+                    estacion = "Invierno";
+                    break;
+                case "marzo":
+                case "abril":
+                case "mayo":
+                    estacion = "Primavera";
+                    break;
+                case "junio":
+                case "julio":
+                case "agosto":
+                    estacion = "Verano";
+                    break;
+                case "septiembre":
+                case "octubre":
+                case "noviembre":
+                    estacion = "Otoño";
+                    break;
+            }
+
+            document.getElementById("resultadoEstacion").innerText = "La estación del año es: " + estacion;
+        }
+
+        // Ejercicio 8 - Calcular descuento
+        function calcularDescuento() {
+            const monto = parseFloat(document.getElementById("monto").value);
+            const tipoCliente = document.getElementById("cliente").value;
+            let descuento = 0;
+
+            if (tipoCliente === "vip") {
+                descuento = 0.10;
+            } else if (tipoCliente === "premium") {
+                descuento = 0.25;
+            }
+
+            const descuentoAplicado = monto * descuento;
+            const total = monto - descuentoAplicado;
+
+            document.getElementById("resultadoCompra").innerText =
+                `Descuento aplicado: $${descuentoAplicado.toFixed(2)} | Monto final: $${total.toFixed(2)}`;
+        }
+
+        // Ejecutar ejercicios de consola al cargar
+        window.onload = function() {
+            ejercicio3();
+            ejercicio4();
+            ejercicio5();
+            ejercicio6();
+        };
+    </script>
+</head>
+<body>
+    <h2>Ejercicio 7 - Estación del año</h2>
+    <label for="mes">Selecciona un mes:</label>
+    <select id="mes">
+        <option value="enero">Enero</option>
+        <option value="febrero">Febrero</option>
+        <option value="marzo">Marzo</option>
+        <option value="abril">Abril</option>
+        <option value="mayo">Mayo</option>
+        <option value="junio">Junio</option>
+        <option value="julio">Julio</option>
+        <option value="agosto">Agosto</option>
+        <option value="septiembre">Septiembre</option>
+        <option value="octubre">Octubre</option>
+        <option value="noviembre">Noviembre</option>
+        <option value="diciembre">Diciembre</option>
+    </select>
+    <button onclick="mostrarEstacion()">Mostrar estación</button>
+    <p id="resultadoEstacion"></p>
+
+    <hr>
+
+    <h2>Ejercicio 8 - Descuento por tipo de cliente</h2>
+    <label for="monto">Monto de la compra:</label>
+    <input type="number" id="monto" placeholder="Ej. 100"><br><br>
+
+    <label for="cliente">Tipo de cliente:</label>
+    <select id="cliente">
+        <option value="normal">Normal</option>
+        <option value="vip">VIP</option>
+        <option value="premium">Premium</option>
+    </select>
+    <button onclick="calcularDescuento()">Calcular descuento</button>
+    <p id="resultadoCompra"></p>
+
+    <hr>
+    <p>Abre la <strong>consola del navegador</strong> (F12 o clic derecho → Inspeccionar → Consola) para ver los resultados de los ejercicios 3 al 6.</p>
+</body>
+</html>
+
