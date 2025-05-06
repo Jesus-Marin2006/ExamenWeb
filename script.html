@@ -1,0 +1,42 @@
+// Ejercicio 3
+        function ejercicio3() {
+            let numeros = [10, 20, 30, 40, 50];
+            numeros.shift(); // Elimina el primer elemento
+            console.log("Ejercicio 3 - Arreglo después de eliminar el primer elemento:", numeros);
+        }
+
+        // Ejercicio 4
+        function ejercicio4() {
+            let nombres = ["Carlos", "Ana", "Luis", "Pedro", "Sofía"]; // Reemplaza uno con tu nombre
+            let miNombre = "Carlos"; // Cambia aquí por tu nombre
+            let posicion = nombres.indexOf(miNombre);
+            console.log(`Ejercicio 4 - Tu nombre está en la posición: ${posicion}`);
+        }
+
+        // Ejercicio 5
+        function ejercicio5() {
+            let edades = [56, 19, 24, 36, 23];
+            let hayMayorDeEdad = edades.some(edad => edad >= 18);
+            console.log("Ejercicio 5 - ¿Hay alguien mayor de edad?:", hayMayorDeEdad);
+        }
+
+        // Ejercicio 6
+        function ejercicio6() {
+            let abecedario = ['r', 'z', 'g', 'a', 't', 'm', 'b', 'y', 'c'];
+            abecedario.sort();
+            console.log("Ejercicio 6 - Abecedario ordenado:", abecedario);
+        }
+
+        // Ejercicio 7 - Mostrar estación
+        function mostrarEstacion() {
+            const mes = document.getElementById("mes").value;
+            let estacion = "";
+
+
+             window.onload = function() {
+            ejercicio3();
+            ejercicio4();
+            ejercicio5();
+            ejercicio6();
+        };
+    </script>
